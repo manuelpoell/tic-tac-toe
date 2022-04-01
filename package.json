@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Frontend Mentor Challenge Tic-Tac-Toe",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "export": "next export",
+    "prettier": "prettier -w .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Manuel Poell<manuelpoell@gmx.at>",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^12.1.4",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "sass": "^1.49.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-next": "^12.1.4",
+    "prettier": "^2.6.1"
+  }
+}
