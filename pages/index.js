@@ -1,21 +1,22 @@
 import Image from 'next/image'
+import styled from '@emotion/styled'
 import ActionButton from '../components/action-button'
 import PlayerMarkSelect from '../components/player-mark-select'
+
+const MainMenu = styled.div`
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+`
 
 const App = () => {
   const Logo = '/assets/logo.svg'
 
   return (
-    <div
-      style={{
-        height: '90vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '15px'
-      }}
-    >
+    <MainMenu>
       <div>
         <Image src={Logo} width={72} height={32} alt="LogoXO" />
       </div>
@@ -26,7 +27,7 @@ const App = () => {
       <ActionButton type="primary" color="blue">
         NEW GAME (VS PLAYER)
       </ActionButton>
-    </div>
+    </MainMenu>
   )
 }
 

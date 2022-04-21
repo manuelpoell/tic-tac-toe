@@ -1,0 +1,17 @@
+@keyframes winnerScreenBGFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes winnerScreenMenuSlideIn {
+  0% {
+    top: -266px;
+  }
+  100% {
+    top: calc(50% - 133px);
+  }
+}
