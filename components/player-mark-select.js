@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import Image from 'next/image'
-import { useState } from 'react'
 import { COLORS } from '../styles/colors'
 
 const SelectContainer = styled.div`
@@ -54,9 +53,7 @@ const ToggleOption = styled.div`
   }
 `
 
-const PlayerMarkSelect = () => {
-  const [currentSelection, setCurrentSelection] = useState('X')
-
+const PlayerMarkSelect = ({ currentSelection, update }) => {
   const IconO = '/assets/icon-o.svg'
   const IconX = '/assets/icon-x.svg'
 
@@ -65,7 +62,7 @@ const PlayerMarkSelect = () => {
       <h4>PICK PLAYER 1&apos;S MARK</h4>
       <ToggleBox>
         <ToggleOption
-          onClick={() => setCurrentSelection('O')}
+          onClick={() => update('O')}
           className={currentSelection === 'O' ? 'selected' : ''}
         >
           <Image
@@ -82,7 +79,7 @@ const PlayerMarkSelect = () => {
           />
         </ToggleOption>
         <ToggleOption
-          onClick={() => setCurrentSelection('X')}
+          onClick={() => update('X')}
           className={currentSelection === 'X' ? 'selected' : ''}
         >
           <Image

@@ -17,7 +17,7 @@ const TileContainer = styled.div`
   }
 `
 
-const Tile = ({ currentTurn, value, click, success, ...props }) => {
+const Tile = ({ xTurn, value, click, success, ...props }) => {
   const [imageSrc, setImageSrc] = useState('')
 
   const IconO = '/assets/icon-o.svg'
@@ -25,6 +25,7 @@ const Tile = ({ currentTurn, value, click, success, ...props }) => {
   const IconOutlineO = '/assets/icon-o-outline.svg'
   const IconOutlineX = '/assets/icon-x-outline.svg'
 
+  if (!value && imageSrc && !imageSrc.includes('outline')) setImageSrc('')
   if (value === 'X' && imageSrc !== IconX) setImageSrc(IconX)
   if (value === 'O' && imageSrc !== IconO) setImageSrc(IconO)
 
@@ -37,8 +38,7 @@ const Tile = ({ currentTurn, value, click, success, ...props }) => {
         background: success ? successColor : COLORS.navy.light
       }}
       onMouseEnter={() => {
-        if (!imageSrc)
-          setImageSrc(currentTurn === 'O' ? IconOutlineO : IconOutlineX)
+        if (!imageSrc) setImageSrc(xTurn ? IconOutlineX : IconOutlineO)
       }}
       onMouseLeave={() => {
         if (imageSrc.includes('outline')) setImageSrc('')

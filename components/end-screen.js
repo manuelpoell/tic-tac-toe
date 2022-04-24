@@ -10,13 +10,13 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   background: #000;
-  animation: winnerScreenBGFadeIn 0.5s forwards;
+  animation: winnerScreenBGFadeIn 0.5s;
   opacity: 0.5;
   z-index: 100;
 `
 
 const EndScreenMenu = styled.div`
-  animation: winnerScreenMenuSlideIn 0.5s forwards;
+  animation: winnerScreenMenuSlideIn 0.5s;
   position: absolute;
   left: 0;
   top: calc(50% - 133px);
@@ -58,18 +58,22 @@ const EndScreen = ({ winner, text, quit, next, ...props }) => {
       <EndScreenMenu {...props}>
         <h4>{text}</h4>
         <WinnerText>
-          <Image
-            src={winner === 'X' ? IconX : IconO}
-            width={64}
-            height={64}
-            alt={winner}
-          />
+          {winner === 'TIE' ? (
+            <></>
+          ) : (
+            <Image
+              src={winner === 'X' ? IconX : IconO}
+              width={64}
+              height={64}
+              alt={winner}
+            />
+          )}
           <h1
             style={{
               color: winner === 'X' ? COLORS.blue.light : COLORS.orange.base
             }}
           >
-            TAKES THE ROUND
+            {winner === 'TIE' ? 'ROUND TIED' : 'TAKES THE ROUND'}
           </h1>
         </WinnerText>
         <MenuOptions>

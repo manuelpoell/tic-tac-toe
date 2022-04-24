@@ -9,13 +9,13 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   background: #000;
-  animation: winnerScreenBGFadeIn 0.5s forwards;
+  animation: winnerScreenBGFadeIn 0.5s;
   opacity: 0.5;
   z-index: 100;
 `
 
 const EndScreenMenu = styled.div`
-  animation: winnerScreenMenuSlideIn 0.5s forwards;
+  animation: winnerScreenMenuSlideIn 0.5s;
   position: absolute;
   left: 0;
   top: calc(50% - 133px);

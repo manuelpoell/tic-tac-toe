@@ -22,17 +22,17 @@ const LabelText = styled.span`
   color: ${COLORS.silver.base};
 `
 
-const TurnLabel = ({ current, ...props }) => {
+const TurnLabel = ({ xTurn, ...props }) => {
   const IconO = '/assets/icon-o.svg'
   const IconX = '/assets/icon-x.svg'
 
   return (
     <Label {...props}>
       <Image
-        src={current === 'O' ? IconO : IconX}
+        src={xTurn ? IconX : IconO}
         width={20}
         height={20}
-        alt={current}
+        alt={xTurn ? 'X' : 'O'}
         style={{
           filter:
             'brightness(0) saturate(100%) invert(93%) sepia(3%) saturate(2504%) hue-rotate(168deg) brightness(83%) contrast(87%)'
