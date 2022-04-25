@@ -69,7 +69,12 @@ const EndScreen = ({ winner, text, quit, next, ...props }) => {
           )}
           <h1
             style={{
-              color: winner === 'X' ? COLORS.blue.light : COLORS.orange.base,
+              color:
+                winner === 'TIE'
+                  ? COLORS.silver.base
+                  : winner === 'X'
+                  ? COLORS.blue.light
+                  : COLORS.orange.base,
               maxWidth: '66vw'
             }}
           >

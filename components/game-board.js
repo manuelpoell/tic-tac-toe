@@ -51,15 +51,21 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
   }
 
   const winner = calculateWinner(tiles)
-  if (winner && prompt.length < 1) {
-    if (vsCPU) {
-      setWinnerText(winner === playerOne ? 'YOU WON!' : 'OH NO, YOU LOST...')
+  if (winner && winner.mark && prompt.length < 1) {
+    if (winner.mark === 'TIE') {
+      setWinnerText('')
+    } else if (vsCPU) {
+      setWinnerText(
+        winner.mark === playerOne ? 'YOU WON!' : 'OH NO, YOU LOST...'
+      )
     } else {
-      setWinnerText(winner === playerOne ? 'PLAYER 1 WINS!' : 'PLAYER 2 WINS!')
+      setWinnerText(
+        winner.mark === playerOne ? 'PLAYER 1 WINS!' : 'PLAYER 2 WINS!'
+      )
     }
 
     let newStats = { ...stats }
-    newStats[winner] = newStats[winner] + 1
+    newStats[winner.mark] = newStats[winner.mark] + 1
     setStats(newStats)
     displayPrompt('END')
   }
@@ -89,7 +95,7 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
     <>
       {prompt === 'END' ? (
         <EndScreen
-          winner={winner}
+          winner={winner?.mark}
           text={winnerText}
           next={() => restart()}
           quit={quit}
@@ -128,16 +134,19 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
             xTurn={xTurn}
             value={tiles[0]}
             click={() => tileClick(0)}
+            success={winner?.line?.includes(0)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[1]}
             click={() => tileClick(1)}
+            success={winner?.line?.includes(1)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[2]}
             click={() => tileClick(2)}
+            success={winner?.line?.includes(2)}
           ></Tile>
         </RowContainer>
         <RowContainer>
@@ -145,16 +154,19 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
             xTurn={xTurn}
             value={tiles[3]}
             click={() => tileClick(3)}
+            success={winner?.line?.includes(3)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[4]}
             click={() => tileClick(4)}
+            success={winner?.line?.includes(4)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[5]}
             click={() => tileClick(5)}
+            success={winner?.line?.includes(5)}
           ></Tile>
         </RowContainer>
         <RowContainer>
@@ -162,16 +174,19 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
             xTurn={xTurn}
             value={tiles[6]}
             click={() => tileClick(6)}
+            success={winner?.line?.includes(6)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[7]}
             click={() => tileClick(7)}
+            success={winner?.line?.includes(7)}
           ></Tile>
           <Tile
             xTurn={xTurn}
             value={tiles[8]}
             click={() => tileClick(8)}
+            success={winner?.line?.includes(8)}
           ></Tile>
         </RowContainer>
         <RowContainer>
