@@ -15,6 +15,7 @@ const RowContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 460px;
+  max-width: 90vw;
 `
 
 const BoardContainer = styled.div`
@@ -24,6 +25,7 @@ const BoardContainer = styled.div`
   align-items: center;
   width: 140px;
   height: 623px;
+  max-height: calc(33vw * 4);
 `
 
 const GameBoard = ({ playerOne, vsCPU, quit }) => {

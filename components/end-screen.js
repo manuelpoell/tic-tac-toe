@@ -26,9 +26,8 @@ const EndScreenMenu = styled.div`
   z-index: 101;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 10px;
 
   > h4 {
     color: ${COLORS.silver.base};
@@ -70,7 +69,8 @@ const EndScreen = ({ winner, text, quit, next, ...props }) => {
           )}
           <h1
             style={{
-              color: winner === 'X' ? COLORS.blue.light : COLORS.orange.base
+              color: winner === 'X' ? COLORS.blue.light : COLORS.orange.base,
+              maxWidth: '66vw'
             }}
           >
             {winner === 'TIE' ? 'ROUND TIED' : 'TAKES THE ROUND'}

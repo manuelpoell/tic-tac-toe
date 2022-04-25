@@ -5,7 +5,9 @@ import { useState } from 'react'
 
 const TileContainer = styled.div`
   width: 140px;
+  max-width: 28vw;
   height: 140px;
+  max-height: 28vw;
   border-radius: 15px;
   box-shadow: inset 0px -8px 0px ${COLORS.navy.shadow};
   display: flex;

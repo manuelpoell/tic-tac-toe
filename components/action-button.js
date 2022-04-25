@@ -12,6 +12,7 @@ const Button = styled.button(props => ({
   letterSpacing: '1.25px',
   lineHeight: '25.2px',
   width: props.type === 'secondary' ? 'fit-content' : '460px',
+  maxWidth: '90vw',
   padding: props.type === 'secondary' ? '0 20px' : '8px',
   background: COLORS[props.color]['base'],
   boxShadow:

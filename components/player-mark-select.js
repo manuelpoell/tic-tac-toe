@@ -5,6 +5,7 @@ import { COLORS } from '../styles/colors'
 const SelectContainer = styled.div`
   height: 205px;
   width: 460px;
+  max-width: 90vw;
   border-radius: 15px;
   background: ${COLORS.navy.light};
   box-shadow: inset 0px -8px 0px ${COLORS.navy.shadow};
@@ -28,6 +29,7 @@ const SelectContainer = styled.div`
 const ToggleBox = styled.div`
   height: 72px;
   width: 412px;
+  max-width: 80vw;
   border-radius: 10px;
   background: ${COLORS.navy.base};
   display: flex;
@@ -38,6 +40,7 @@ const ToggleBox = styled.div`
 const ToggleOption = styled.div`
   height: 54px;
   width: 198px;
+  max-width: 35vw;
   border-radius: 10px;
   display: flex;
   justify-content: center;

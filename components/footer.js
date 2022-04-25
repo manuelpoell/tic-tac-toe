@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const FooterSection = styled.span`
-  position: absolute;
+  position: fixed;
   bottom: 10px;
 `
 

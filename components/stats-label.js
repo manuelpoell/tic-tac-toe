@@ -3,6 +3,7 @@ import { COLORS } from '../styles/colors'
 
 const Label = styled.div(props => ({
   width: '140px',
+  maxWidth: '28vw',
   height: '72px',
   borderRadius: '15px',
   background: COLORS[props.color]['base'],
