@@ -5,7 +5,6 @@ export default class Document extends NextDocument {
     return (
       <Html lang="en">
         <Head>
-          <title>Tic Tac Toe | Manuel Pöll</title>
           <link rel="icon" href="/assets/favicon-32x32.png" />
         </Head>
         <body>
