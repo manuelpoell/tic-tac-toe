@@ -105,7 +105,7 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
       )}
       {prompt === 'RESTART' ? (
         <RestartPrompt
-          next={() => restart()}
+          next={() => quit()}
           quit={() => displayPrompt('')}
         ></RestartPrompt>
       ) : (
@@ -113,13 +113,7 @@ const GameBoard = ({ playerOne, vsCPU, quit }) => {
       )}
       <BoardContainer>
         <RowContainer>
-          <Image
-            src={Logo}
-            width={72}
-            height={32}
-            alt="LogoXO"
-            onClick={quit}
-          />
+          <Image src={Logo} width={72} height={32} alt="LogoXO" />
           <TurnLabel xTurn={xTurn}></TurnLabel>
           <ActionButton
             type="secondary"
